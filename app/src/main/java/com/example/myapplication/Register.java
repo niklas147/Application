@@ -20,7 +20,7 @@ import com.example.myapplication.databinding.ActivityRegisterBinding;
 public class Register extends AppCompatActivity implements View.OnClickListener{
 
     Button bRegister;
-    EditText etName, etLastname, etUsername, etPassword, etRePassword;
+    EditText etName, etLastname, etUsername, etPassword, etRePassword, etGrade;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +33,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
         etPassword= (EditText) findViewById(R.id.etPasswort);
         etRePassword= (EditText) findViewById(R.id.etRePasswort);
         bRegister = (Button) findViewById(R.id.bRegister);
+        etGrade= (EditText) findViewById(R.id.etGrade);
 
         bRegister.setOnClickListener(this);
     }
