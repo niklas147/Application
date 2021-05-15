@@ -36,6 +36,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         bLogin = (Button) findViewById(R.id.bLogin);
         bRegisterLink = (Button) findViewById(R.id.bRegisterLink);
         bLogin.setOnClickListener(this);
+        bRegisterLink.setOnClickListener(this);
     }
 
     @Override
