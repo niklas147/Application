@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:padding="10dp"
     android:layout_height="match_parent"
-    tools:context=".Register">
+    tools:context=".Konto">
 
     <TextView
         android:layout_width="wrap_content"
@@ -46,30 +46,13 @@
         android:text="Passwort"
         android:layout_height="wrap_content"/>
 
-    <EditText
-        android:id="@+id/etPasswort"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:text="Wiederholung Passwort"
-        android:layout_height="wrap_content"/>
-
-    <EditText
-        android:id="@+id/etRePasswort"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword" />
 
     <Button
-        android:id="@+id/bRegister"
+        android:id="@+id/bLogout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="#659DBD"
-
-        android:text="Regisitrieren" />
+        android:text="Abmelden" />
 
 
 

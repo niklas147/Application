@@ -1,11 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
+    android:padding="10dp"
     android:layout_height="match_parent"
     tools:context=".Login">
 
-     
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Benutzername"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/etBenutzername"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="15dp"
+        android:layout_height="wrap_content"/>
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:text="Passwort"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/etPasswort"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/bLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#659DBD"
+
+        android:text="Login" />
+
+</LinearLayout>
