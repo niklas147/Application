@@ -38,4 +38,11 @@
 
         android:text="Login" />
 
+    <TextView
+        android:id="@+id/tvRegisterLink"
+        android:layout_width="wrap_content"
+        android:text="Noch kein Konto ? Hier Registrieren"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"/>
+
 </LinearLayout>

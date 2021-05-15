@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -9,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -17,11 +19,11 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.example.myapplication.databinding.ActivityLoginBinding;
 
-public class Login extends AppCompatActivity {
+public class Login extends AppCompatActivity implements View.OnClickListener {
 
     Button bLogin;
-    EditText etUsername, etPasswort;
-
+    EditText etUsername, etPassword;
+    TextView tvRegisterLink;
 
 
     @Override
@@ -30,5 +32,23 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         etUsername = (EditText) findViewById(R.id.etBenutzername);
+        etPassword = (EditText) findViewById(R.id.etPasswort);
+        bLogin = (Button) findViewById(R.id.bLogin);
+        tvRegisterLink = (TextView) findViewById(R.id.tvRegisterLink);
+        bLogin.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch(v.getId()){
+            case R.id.bLogin:
+
+
+                break;
+            case R.id.tvRegisterLink:
+                startActivity(new Intent(this, Register.class));
+                break;
+
+        }
     }
 }
