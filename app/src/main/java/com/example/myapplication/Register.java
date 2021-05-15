@@ -41,10 +41,18 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
     public void onClick(View v) {
         switch(v.getId()){
             case R.id.bRegister:
+                if (etPassword.getText().toString().equals(etRePassword.getText().toString())){
+                String name = etName.getText().toString();
+                String lastname = etLastname.getText().toString();
+                String username = etUsername.getText().toString();
+                String password = etPassword.getText().toString();
+                String grade = etGrade.getText().toString();
 
-                
-                break;
 
+                User registeredData = new User(name, lastname, username,password,grade);
+
+
+                break; }
         }
     }
 }
