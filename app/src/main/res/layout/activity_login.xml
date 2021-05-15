@@ -37,20 +37,13 @@
         android:backgroundTint="#659DBD"
 
         android:insetTop="6dp"
-        android:text="Login" />
+        android:text="Anmelden" />
 
-    <Button
-        android:id="@+id/bRegisterLink"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:backgroundTint="#00FFFFFF"
-        android:insetTop="0dp"
-        android:insetBottom="0dp"
-        android:text="Kein Konto ? Hier Registrieren"
-        android:textColor="@color/black"
-        android:textSize="10sp"
-        android:typeface="monospace"
-        app:iconPadding="0dp" />
+    <TextView
+        android:id="@+id/tvRegisterLink"
+        android:layout_width="wrap_content"
+        android:text="kein Konto ? Hier Anmelden"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>

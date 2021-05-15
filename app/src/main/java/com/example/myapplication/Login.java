@@ -21,9 +21,9 @@ import com.example.myapplication.databinding.ActivityLoginBinding;
 
 public class Login extends AppCompatActivity implements View.OnClickListener {
 
-    Button bLogin, bRegisterLink;
+    Button bLogin;
     EditText etUsername, etPassword;
-
+    TextView tvRegisterLink;
 
 
     @Override
@@ -34,9 +34,9 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         etUsername = (EditText) findViewById(R.id.etBenutzername);
         etPassword = (EditText) findViewById(R.id.etPasswort);
         bLogin = (Button) findViewById(R.id.bLogin);
-        bRegisterLink = (Button) findViewById(R.id.bRegisterLink);
+        tvRegisterLink = (TextView) findViewById(R.id.tvRegisterLink);
         bLogin.setOnClickListener(this);
-        bRegisterLink.setOnClickListener(this);
+        tvRegisterLink.setOnClickListener(this);
     }
 
     @Override
@@ -46,7 +46,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
 
                 break;
-            case R.id.bRegisterLink:
+            case R.id.tvRegisterLink:
                 startActivity(new Intent(this, Register.class));
                 break;
 
