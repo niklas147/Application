@@ -32,7 +32,7 @@ public class Login extends AppCompatActivity {
     Button bLogin;
     EditText etUsername, etPassword;
     TextView tvRegisterLink;
-    ProgressBar progressBar;
+    ProgressBar progressBar2;
     FirebaseAuth fAuth;
 
 
@@ -45,12 +45,12 @@ public class Login extends AppCompatActivity {
         etPassword      = findViewById(R.id.etPasswort);
         bLogin          = findViewById(R.id.bLogin);
         tvRegisterLink  = findViewById(R.id.tvRegisterLink);
-        progressBar     = findViewById(R.id.progressBar);
+        progressBar2     = findViewById(R.id.progressBar2);
 
         fAuth           = FirebaseAuth.getInstance();
 
 
-        tvRegisterLink.setOnClickListener(new View.OnClickListener() {
+        bLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String username = etUsername.getText().toString().trim();
@@ -71,7 +71,7 @@ public class Login extends AppCompatActivity {
                     etPassword.setError("Passwort muss mindestens 6 Zeichen lang sein");
                 }
 
-                progressBar.setVisibility(View.VISIBLE);
+                progressBar2.setVisibility(View.VISIBLE);
 
 
                 //Authenticate user
@@ -83,12 +83,12 @@ public class Login extends AppCompatActivity {
                             Toast.makeText(Login.this, "Erfolgreich angemeldet", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(), Konto.class));
                         }else{
-
+                            Toast.makeText(Login.this, "Fehler beim Anmelden", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
 
-                startActivity(new Intent(getApplicationContext(), Register.class));
+
 
 
 
@@ -102,4 +102,7 @@ public class Login extends AppCompatActivity {
     }
 
 
+    public void gotoRegister(View view) {
+        startActivity(new Intent(getApplicationContext(), Register.class));
     }
+}

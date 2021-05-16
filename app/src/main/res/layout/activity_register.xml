@@ -92,7 +92,7 @@
         android:text="bereits ein Konto ? Hier Anmelden"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="30dp"
-
+        android:onClick="gotoLogin"
         android:layout_height="wrap_content"/>
 
     <ProgressBar
