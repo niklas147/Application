@@ -9,11 +9,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class Konto extends AppCompatActivity implements View.OnClickListener {
+import com.google.firebase.auth.FirebaseAuth;
+
+public class Konto extends AppCompatActivity  {
 
     Button bLogout;
     EditText etName, etLastname, etUsername, etGrade;
-    UserLocalStore userLocalStore;
+
 
 
     @Override
@@ -25,52 +27,15 @@ public class Konto extends AppCompatActivity implements View.OnClickListener {
         etLastname = (EditText) findViewById(R.id.etNachname);
         etUsername = (EditText) findViewById(R.id.etBenutzername);
         etGrade = (EditText) findViewById(R.id.etGrade);
-
         bLogout = (Button) findViewById(R.id.bLogout);
 
-        bLogout.setOnClickListener(this);
-
-        userLocalStore = new UserLocalStore(this);
     }
 
-    @Override
-    protected void onStart(){
-        super.onStart();
-
-        if (authenticate() == true){
-            displayUserDetails();
-        }
-
+    public void logout(View view){
+        FirebaseAuth.getInstance().signOut();
+        startActivity(new Intent(getApplicationContext(), Login.class));
+        finish();
     }
-
-    private boolean authenticate(){
-        return userLocalStore.getUserLoggedIn();
-    }
-
-    private void displayUserDetails(){
-        User user = userLocalStore.getLoggedInUser();
-
-        etUsername.setText(user.username);
-        etName.setText(user.name);
-        etLastname.setText(user.lastname);
-        etGrade.setText(user.grade);
 
 
     }
-
-    @Override
-    public void onClick(View v) {
-        switch(v.getId()){
-            case R.id.bLogout:
-                userLocalStore.clearUserData();
-                userLocalStore.setUserLoggedIn(false);
-
-                startActivity(new Intent(this, Login.class));
-                break;
-
-
-
-
-        }
-    }
-}
