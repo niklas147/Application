@@ -55,11 +55,12 @@ public class Register extends AppCompatActivity {
         bRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String username = etUsername.getText().toString().trim();
-                String name = etName.getText().toString().trim();
-                String lastname = etLastname.getText().toString().trim();
-                String password = etPassword.getText().toString().trim();
-                String grade = etGrade.getText().toString().trim();
+                String username     = etUsername.getText().toString().trim();
+                String name         = etName.getText().toString().trim();
+                String lastname     = etLastname.getText().toString().trim();
+                String password     = etPassword.getText().toString().trim();
+                String grade        = etGrade.getText().toString().trim();
+                String rePassword   = etRePassword.getText().toString().trim();
 
                 if (TextUtils.isEmpty(username)){
                     etUsername.setError("Benutzername wird benötigt");
@@ -88,6 +89,15 @@ public class Register extends AppCompatActivity {
 
                 if (password.length() < 6){
                     etPassword.setError("Passwort muss mindestens 6 Zeichen lang sein");
+                    return;
+                }
+
+                if (!password.equals(rePassword)){
+                    etRePassword.setError("Passwörter stimmen nicht überein");
+                    etRePassword.setText("");
+                    etPassword.setText("");
+                    return;
+
                 }
 
                 progressBar.setVisibility(View.VISIBLE);
