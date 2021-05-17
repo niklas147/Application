@@ -20,6 +20,8 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Login extends AppCompatActivity {
 
@@ -29,6 +31,7 @@ public class Login extends AppCompatActivity {
     ProgressBar progressBar2;
     FirebaseAuth fAuth;
 
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,9 +42,10 @@ public class Login extends AppCompatActivity {
         etPassword      = findViewById(R.id.etPasswort);
         bLogin          = findViewById(R.id.bLogin);
         tvRegisterLink  = findViewById(R.id.tvRegisterLink);
-        progressBar2     = findViewById(R.id.progressBar2);
+        progressBar2    = findViewById(R.id.progressBar2);
 
         fAuth           = FirebaseAuth.getInstance();
+
 
 
         bLogin.setOnClickListener(new View.OnClickListener() {
@@ -97,6 +101,7 @@ public class Login extends AppCompatActivity {
 
 
     public void gotoRegister(View view) {
+
         startActivity(new Intent(getApplicationContext(), Register.class));
     }
 }
