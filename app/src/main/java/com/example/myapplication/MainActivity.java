@@ -37,6 +37,9 @@ public class MainActivity extends AppCompatActivity  {
     public void gotoRegister(View view) {
         startActivity(new Intent(getApplicationContext(), Register.class));
     }
+    public void gotonav(View view) {
+        startActivity(new Intent(getApplicationContext(),MainActivity2.class));
+    }
 
     }
 
