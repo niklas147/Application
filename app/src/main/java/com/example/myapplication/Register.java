@@ -142,12 +142,13 @@ public class Register extends AppCompatActivity {
                         if(task.isSuccessful()){
 
                             // add User Data to Database
-                            db.collection("users").document(username).set(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            db.collection(username).document("Persönliche Daten").set(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void unused) {
                                     Toast.makeText(Register.this, "Erfolgreich Registriert", Toast.LENGTH_SHORT).show();
                                 }
-                            }).addOnFailureListener(new OnFailureListener() {
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
                                 @Override
                                 public void onFailure(@NonNull Exception e) {
                                     Toast.makeText(Register.this, "Erfolgreich Registriert, Datenspeicherung fehlgeschlagen", Toast.LENGTH_SHORT).show();
@@ -157,6 +158,7 @@ public class Register extends AppCompatActivity {
 
                             startActivity(new Intent(getApplicationContext(), Konto.class));
                         }else{
+                            progressBar.setVisibility(View.VISIBLE);
                             Toast.makeText(Register.this, "Fehler beim Erstellen des Benutzers" , Toast.LENGTH_SHORT).show();
 
                         }

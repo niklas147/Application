@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -31,7 +32,6 @@ public class Login extends AppCompatActivity {
     ProgressBar progressBar2;
     FirebaseAuth fAuth;
 
-    FirebaseDatabase database = FirebaseDatabase.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +46,11 @@ public class Login extends AppCompatActivity {
 
         fAuth           = FirebaseAuth.getInstance();
 
+        FirebaseUser user = fAuth.getInstance().getCurrentUser();
 
+        if (user !=null){
+            startActivity(new Intent(getApplicationContext(), Konto.class));
+        }
 
         bLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,11 +68,9 @@ public class Login extends AppCompatActivity {
                     return;
                 }
 
-
                 if (password.length() < 6){
                     etPassword.setError("Passwort muss mindestens 6 Zeichen lang sein");
                 }
-
                 progressBar2.setVisibility(View.VISIBLE);
 
 
@@ -82,26 +84,16 @@ public class Login extends AppCompatActivity {
                             startActivity(new Intent(getApplicationContext(), Konto.class));
                         }else{
                             Toast.makeText(Login.this, "Fehler beim Anmelden", Toast.LENGTH_SHORT).show();
+                            progressBar2.setVisibility(View.INVISIBLE);
                         }
                     }
                 });
-
-
-
-
-
             }
         });
-
-
-
-
-
     }
 
 
     public void gotoRegister(View view) {
-
         startActivity(new Intent(getApplicationContext(), Register.class));
     }
 }

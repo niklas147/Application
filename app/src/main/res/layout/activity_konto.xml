@@ -40,19 +40,13 @@
         android:layout_marginBottom="15dp"/>
 
 
-    <Button
-        android:id="@+id/bgetInfo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#659DBD"
-        android:text="INFOS"
-        android:onClick="logout"/>
+
 
     <Button
         android:id="@+id/bLogout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="#659DBD"
+        android:backgroundTint="#15D868"
         android:text="Abmelden"
         android:onClick="logout"/>
 

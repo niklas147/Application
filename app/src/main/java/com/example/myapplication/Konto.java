@@ -23,72 +23,42 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.protobuf.StringValue;
 
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
-public class Konto extends AppCompatActivity  {
+
+public class Konto extends AppCompatActivity implements Functions {
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     Button bLogout, bgetInfo;
     TextView etName, etLastname, etUsername, etGrade;
-    String email;
+
     FirebaseAuth fAuth;
-    String email2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_konto);
 
-        etName =  findViewById(R.id.etVorname);
-        etLastname =  findViewById(R.id.etNachname);
-        etUsername =  findViewById(R.id.etBenutzername);
-        etGrade =  findViewById(R.id.etGrade);
-        bLogout =  findViewById(R.id.bLogout);
-        bgetInfo =  findViewById(R.id.bgetInfo);
+        etName          =  findViewById(R.id.etVorname);
+        etLastname      =  findViewById(R.id.etNachname);
+        etUsername      =  findViewById(R.id.etBenutzername);
+        etGrade         =  findViewById(R.id.etGrade);
+        bLogout         =  findViewById(R.id.bLogout);
+
 
         fAuth           = FirebaseAuth.getInstance();
+
         FirebaseUser user = fAuth.getInstance().getCurrentUser();
 
+        if (user !=null){
 
 
+            String emailcon = emailtoString(user.getEmail());
 
-
-        email = user.getEmail();
-
-        email2 = String.valueOf(email);
-
-        bgetInfo.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.O)
-            @Override
-            public void onClick(View v) {
-                StringBuffer s1 = new StringBuffer();
-                s1.setLength(0);
-                email = user.getEmail();
-
-                for(int i = 0; i < email.length(); i++){
-                    Character charI = email.charAt(i);
-                    s1.append(charI);
-                }
-
-                /*Character b1 = 'n';
-                Character b2 = '@';
-                Character b3 = 'g';
-                Character b4 = '.';
-                Character b5 = 'c';
-                Character b6 = 'o';
-                Character b7 = 'm';
-                StringBuffer s1 = new StringBuffer().append(b1).append(b2).append(b3).append(b4).append(b5).append(b6).append(b7);*/
-
-                String userda = s1.toString();
-
-                db.collection("users").document(userda).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-            @Override
-            public void onSuccess(DocumentSnapshot documentSnapshot) {
-
-
-                Toast.makeText(Konto.this, userda, Toast.LENGTH_SHORT).show();
+            db.collection(emailcon).document("Persönliche Daten").get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                @Override
+                public void onSuccess(DocumentSnapshot documentSnapshot) {
 
                     String name = documentSnapshot.getString("Name");
                     String lastname = documentSnapshot.getString("Nachname");
@@ -99,18 +69,9 @@ public class Konto extends AppCompatActivity  {
                     etName.setText(name);
                     etGrade.setText(grade);
                     etUsername.setText(username);
-
-
-
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(Konto.this, "Konto konnte nicht geladen werden", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
-});
+                }
+            });
+        }
     }
 
     public void logout(View view){
@@ -120,4 +81,4 @@ public class Konto extends AppCompatActivity  {
     }
 
 
-    }
+}
