@@ -6,4 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".Summit_1">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="209dp"
+        android:layout_height="373dp"
+        app:srcCompat="@drawable/stuhlberg"
+        tools:layout_editor_absoluteX="123dp"
+        tools:layout_editor_absoluteY="60dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
