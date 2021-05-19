@@ -63,10 +63,16 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
                     case 2:
                         //when position is equal to 2
                         //redirect to konto page
-                        activity.startActivity(new Intent(activity,Konto2.class)
+                        activity.startActivity(new Intent(activity,Konto.class)
                                 .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                         break;
                     case 3:
+                        //when position is equal to 2
+                        //redirect to konto page
+                        activity.startActivity(new Intent(activity,Konto2.class)
+                                .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                        break;
+                    case 4:
                         // when position is equal to 3
                         //initialize alert dialog
                         AlertDialog.Builder builder= new AlertDialog.Builder(activity);

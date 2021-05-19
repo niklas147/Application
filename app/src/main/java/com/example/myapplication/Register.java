@@ -156,7 +156,7 @@ public class Register extends AppCompatActivity {
                             });
 
 
-                            startActivity(new Intent(getApplicationContext(), Konto.class));
+                            startActivity(new Intent(getApplicationContext(), MainActivity2.class));
                         }else{
                             progressBar.setVisibility(View.VISIBLE);
                             Toast.makeText(Register.this, "Fehler beim Erstellen des Benutzers" , Toast.LENGTH_SHORT).show();

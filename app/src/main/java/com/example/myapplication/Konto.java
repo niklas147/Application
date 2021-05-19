@@ -3,6 +3,10 @@ package com.example.myapplication;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Build;
@@ -10,6 +14,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,14 +31,17 @@ import com.google.protobuf.StringValue;
 
 
 public class Konto extends AppCompatActivity implements Functions {
-
+    //Variables
     FirebaseFirestore db = FirebaseFirestore.getInstance();
-
-    Button bLogout, bgetInfo;
-    TextView etName, etLastname, etUsername, etGrade;
-
     FirebaseAuth fAuth;
 
+    Button bLogout;
+    TextView etName, etLastname, etUsername, etGrade;
+
+    //Drawer
+    DrawerLayout drawerLayout;
+    ImageView btMenu;
+    RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,11 +54,29 @@ public class Konto extends AppCompatActivity implements Functions {
         etGrade         =  findViewById(R.id.etGrade);
         bLogout         =  findViewById(R.id.bLogout);
 
+        //Drawer
+        drawerLayout = findViewById(R.id.drawer_layout);
+        btMenu = findViewById(R.id.bt_menu);
+        recyclerView = findViewById(R.id.recycler_view);
 
         fAuth           = FirebaseAuth.getInstance();
-
         FirebaseUser user = fAuth.getInstance().getCurrentUser();
 
+
+        //Set Layout manager
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        //Set adapter
+        recyclerView.setAdapter(new MainAdapter(this,MainActivity2.arrayList));
+
+        btMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //open drawer
+                drawerLayout.openDrawer(GravityCompat.START);
+
+
+            }
+        });
         if (user !=null){
 
 

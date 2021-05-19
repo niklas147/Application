@@ -12,20 +12,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".Konto2"
+        <activity android:name=".Konto"
             android:launchMode="singleTask"/>
         <activity android:name=".Summits"
             android:launchMode="singleTask"/>
         <activity android:name=".MainActivity2"
             android:launchMode="singleTask"/>
-        <activity android:name=".Summit_7" />
-        <activity android:name=".Summit_6" />
-        <activity android:name=".Summit_5" />
-        <activity android:name=".Summit_4" />
-        <activity android:name=".Summit_3" />
-        <activity android:name=".Summit_2" />
-        <activity android:name=".Summit_1" />
-        <activity android:name=".Konto" />
+        <activity android:name=".Konto2"
+            android:launchMode="singleTask"/>
         <activity
             android:name=".Register"
             android:label="@string/title_activity_register"

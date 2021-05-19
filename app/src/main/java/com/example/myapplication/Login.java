@@ -49,7 +49,7 @@ public class Login extends AppCompatActivity {
         FirebaseUser user = fAuth.getInstance().getCurrentUser();
 
         if (user !=null){
-            startActivity(new Intent(getApplicationContext(), Konto.class));
+            startActivity(new Intent(getApplicationContext(), MainActivity2.class));
         }
 
         bLogin.setOnClickListener(new View.OnClickListener() {
@@ -81,7 +81,7 @@ public class Login extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(Login.this, "Erfolgreich angemeldet", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(), Konto.class));
+                            startActivity(new Intent(getApplicationContext(), MainActivity2.class));
                         }else{
                             Toast.makeText(Login.this, "Fehler beim Anmelden", Toast.LENGTH_SHORT).show();
                             progressBar2.setVisibility(View.INVISIBLE);
