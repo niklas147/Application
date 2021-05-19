@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
-
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -15,17 +14,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="230dp"
-        app:srcCompat="@drawable/logobig"
-        android:layout_marginBottom="270dp"/>
+        app:srcCompat="@drawable/logobig" />
 
-    <Button
-        android:id="@+id/bGotoLogin"
+
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:backgroundTint="#15D868"
-        android:onClick="gotoLogin"
-        android:text="Anmelden" />
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/bGotoLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="#15D868"
+            android:onClick="gotoLogin"
+            android:text="Anmelden" />
+
+    </RelativeLayout>
+
+
+
+
 
 
 
@@ -33,3 +45,4 @@
 
 
 </LinearLayout>
+

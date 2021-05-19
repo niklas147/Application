@@ -48,7 +48,7 @@ public class MainActivity2 extends AppCompatActivity {
         arrayList.add("Home");
         arrayList.add("7 Summits");
         arrayList.add("Konto");
-        arrayList.add("Konto2");
+
 
         //Initialize adapter
         adapter = new MainAdapter(this,arrayList);

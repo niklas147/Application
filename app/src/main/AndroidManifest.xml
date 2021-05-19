@@ -18,8 +18,6 @@
             android:launchMode="singleTask"/>
         <activity android:name=".MainActivity2"
             android:launchMode="singleTask"/>
-        <activity android:name=".Konto2"
-            android:launchMode="singleTask"/>
         <activity
             android:name=".Register"
             android:label="@string/title_activity_register"

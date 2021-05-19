@@ -17,45 +17,88 @@ tools:context=".Konto">
         layout="@layout/main_toolbar"/>
 
     <TextView
+        android:id="@+id/etVorname1"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="0dp"
+        android:layout_height="wrap_content"
+        android:text="Vorname"
+        android:textColor="#B0BDCF"
+        android:textSize="17dp" />
+    <EditText
         android:id="@+id/etVorname"
         android:layout_width="match_parent"
         android:layout_marginBottom="15dp"
-        android:layout_height="wrap_content"/>
-
+        android:layout_height="wrap_content"
+        android:textSize="17dp"/>
 
     <TextView
+        android:id="@+id/etNachname1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:text="Nachname"
+        android:textColor="#B0BDCF"
+        android:textSize="17dp" />
+    <EditText
         android:id="@+id/etNachname"
         android:layout_width="match_parent"
         android:layout_marginBottom="15dp"
-        android:layout_height="wrap_content"/>
-
+        android:layout_height="wrap_content"
+        android:textSize="17dp"/>
 
 
     <TextView
+        android:id="@+id/etBenutzername1"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="#B0BDCF"
+        android:textSize="17dp"
+        android:text="Email"/>
+    <EditText
         android:id="@+id/etBenutzername"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
-        />
-
-
+        android:layout_height="wrap_content"
+        android:textSize="17dp"/>
 
     <TextView
+        android:id="@+id/etGrade1"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="0dp"
+        android:textColor="#B0BDCF"
+        android:layout_height="wrap_content"
+        android:textSize="17dp"
+        android:text="Klasse"/>
+    <EditText
         android:id="@+id/etGrade"
         android:layout_width="match_parent"
+        android:layout_marginBottom="15dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"/>
+        android:textSize="17dp"/>
 
 
 
+
+
+
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <Button
         android:id="@+id/bLogout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="8dp"
         android:backgroundTint="#15D868"
-        android:text="Abmelden"
-        android:onClick="logout"/>
+        android:onClick="logout"
+        android:text="Abmelden" />
+
+</RelativeLayout>
+
 
 </LinearLayout>
 
