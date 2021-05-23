@@ -1,15 +1,26 @@
 package com.example.myapplication;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.snackbar.Snackbar;
+
+
+import java.io.File;
 import java.util.ArrayList;
 
 public class MainActivity2 extends AppCompatActivity {
@@ -19,6 +30,9 @@ public class MainActivity2 extends AppCompatActivity {
     RecyclerView recyclerView;
     static ArrayList<String> arrayList= new ArrayList<>();
     MainAdapter adapter;
+    private ImageView ivUploadImage;
+    public Uri imageUri;
+
 
     public static void closeDrawer(DrawerLayout drawerLayout) {
         //Check condition
@@ -34,6 +48,8 @@ public class MainActivity2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+
+       
 
 
         //Assign variable
@@ -67,7 +83,14 @@ public class MainActivity2 extends AppCompatActivity {
             }
         });
 
+
     }
+
+
+
+
+
+
 
     @Override
     protected void onPause() {

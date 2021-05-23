@@ -128,7 +128,7 @@ public class Register extends AppCompatActivity {
                 progressBar.setVisibility(View.VISIBLE);
 
                 //add key and Values to hash Map
-                hashMap.put("Benutzername", username);
+                hashMap.put("Benutzername", username.toLowerCase());
                 hashMap.put("Name", name);
                 hashMap.put("Nachname", lastname);
                 hashMap.put("Klasse", grade);
@@ -142,7 +142,7 @@ public class Register extends AppCompatActivity {
                         if(task.isSuccessful()){
 
                             // add User Data to Database
-                            db.collection(username).document("Persönliche Daten").set(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            db.collection(username.toLowerCase()).document("Persönliche Daten").set(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void unused) {
                                     Toast.makeText(Register.this, "Erfolgreich Registriert", Toast.LENGTH_SHORT).show();

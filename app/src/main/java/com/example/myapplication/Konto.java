@@ -30,7 +30,7 @@ import com.google.protobuf.StringValue;
 
 
 
-public class Konto extends AppCompatActivity implements Functions {
+public class Konto extends AppCompatActivity {
     //Variables
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     FirebaseAuth fAuth;
@@ -42,7 +42,7 @@ public class Konto extends AppCompatActivity implements Functions {
     DrawerLayout drawerLayout;
     ImageView btMenu;
     RecyclerView recyclerView;
-
+    //Drawer end
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,6 +58,7 @@ public class Konto extends AppCompatActivity implements Functions {
         drawerLayout = findViewById(R.id.drawer_layout);
         btMenu = findViewById(R.id.bt_menu);
         recyclerView = findViewById(R.id.recycler_view);
+        //Drawer end
 
         fAuth           = FirebaseAuth.getInstance();
         FirebaseUser user = fAuth.getInstance().getCurrentUser();
@@ -80,9 +81,7 @@ public class Konto extends AppCompatActivity implements Functions {
         if (user !=null){
 
 
-            String emailcon = emailtoString(user.getEmail());
-
-            db.collection(emailcon).document("Persönliche Daten").get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            db.collection(user.getEmail()).document("Persönliche Daten").get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                 @Override
                 public void onSuccess(DocumentSnapshot documentSnapshot) {
 

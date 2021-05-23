@@ -29,7 +29,7 @@
             android:layout_alignParentBottom="true"
             android:layout_gravity="bottom"
             android:layout_marginBottom="10dp"
-            android:backgroundTint="#15D868"
+            android:backgroundTint="#557a95"
             android:onClick="gotoLogin"
             android:text="Anmelden" />
 

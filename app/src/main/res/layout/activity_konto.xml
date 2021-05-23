@@ -21,7 +21,7 @@ tools:context=".Konto">
         android:layout_width="match_parent"
         android:layout_marginBottom="0dp"
         android:layout_height="wrap_content"
-        android:text="Vorname"
+        android:text=" Vorname"
         android:textColor="#B0BDCF"
         android:textSize="17dp" />
     <EditText
@@ -36,7 +36,7 @@ tools:context=".Konto">
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="0dp"
-        android:text="Nachname"
+        android:text=" Nachname"
         android:textColor="#B0BDCF"
         android:textSize="17dp" />
     <EditText
@@ -54,7 +54,7 @@ tools:context=".Konto">
         android:layout_height="wrap_content"
         android:textColor="#B0BDCF"
         android:textSize="17dp"
-        android:text="Email"/>
+        android:text=" Email"/>
     <EditText
         android:id="@+id/etBenutzername"
         android:layout_width="match_parent"
@@ -69,7 +69,7 @@ tools:context=".Konto">
         android:textColor="#B0BDCF"
         android:layout_height="wrap_content"
         android:textSize="17dp"
-        android:text="Klasse"/>
+        android:text=" Klasse"/>
     <EditText
         android:id="@+id/etGrade"
         android:layout_width="match_parent"
@@ -93,7 +93,7 @@ tools:context=".Konto">
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="8dp"
-        android:backgroundTint="#15D868"
+        android:backgroundTint="#557a95"
         android:onClick="logout"
         android:text="Abmelden" />
 

@@ -34,7 +34,7 @@
         android:id="@+id/bLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="#15D868"
+        android:backgroundTint="#557a95"
 
         android:insetTop="6dp"
         android:text="Anmelden" />

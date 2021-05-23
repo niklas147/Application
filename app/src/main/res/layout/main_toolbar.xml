@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="0dp"
-    app:cardBackgroundColor="#15D868">
+    app:cardBackgroundColor="#557A95">
 
 
     <RelativeLayout
@@ -24,11 +24,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Navigation Drawer"
-            android:textSize="18sp"
-            android:textStyle="bold"
+            android:layout_centerInParent="true"
+            android:fontFamily="monospace"
+            android:text="Seven Summits"
+
             android:textColor="@color/white"
-            android:layout_centerInParent="true"/>
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
     </RelativeLayout>
 
