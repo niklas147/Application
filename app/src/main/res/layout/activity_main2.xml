@@ -47,16 +47,17 @@
                     android:textColor="#423D3D" />
 
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/textViewStuhlberg"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingLeft="20dp"
                     android:text="1. Der Stuhlberg"
                     android:textColor="#423D3D"
+                    android:textStyle="bold"
                     android:textSize="25dp" />
 
                 <ImageView
-                    android:id="@+id/imageView8"
+                    android:id="@+id/imageViewStuhlberg"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:adjustViewBounds="true"
@@ -64,7 +65,7 @@
                     android:paddingTop="20dp"
                     android:paddingRight="20dp"
                     android:scaleType="fitStart"
-                    app:srcCompat="@drawable/stuhlberg" />
+                    app:srcCompat="@drawable/stuhlberg_cut" />
 
                 <TextView
                     android:id="@+id/textViewBarockschloss"
@@ -72,21 +73,138 @@
                     android:layout_height="wrap_content"
                     android:paddingLeft="20dp"
                     android:paddingTop="20dp"
-                    android:text="1. Das Barockschloss"
+                    android:text="2. Das Barockschloss"
                     android:textColor="#423D3D"
                     android:textStyle="bold"
                     android:textSize="25dp" />
 
                 <ImageView
-                    android:id="@+id/imageView7"
+                    android:id="@+id/imageViewBarockSchloss"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:paddingLeft="20dp"
                     android:paddingTop="20dp"
                     android:paddingRight="20dp"
                     android:scaleType="fitStart"
+                    android:adjustViewBounds="true"
                     app:srcCompat="@drawable/barockschloss" />
+                <TextView
+                    android:id="@+id/textViewWeisserStein"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="20dp"
+                    android:text="3. Der Weisse Stein"
+                    android:textColor="#423D3D"
+                    android:textStyle="bold"
+                    android:textSize="25dp" />
 
+                <ImageView
+                    android:id="@+id/imageViewWeisserStein"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="20dp"
+                    android:paddingRight="20dp"
+                    android:scaleType="fitStart"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/weisser_stein" />
+                <TextView
+                    android:id="@+id/textViewHeiligenberg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="20dp"
+                    android:text="4. Der Heiligenberg"
+                    android:textColor="#423D3D"
+                    android:textStyle="bold"
+                    android:textSize="25dp" />
+                <ImageView
+                    android:id="@+id/imageViewHeiligenberg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="20dp"
+                    android:paddingRight="20dp"
+                    android:scaleType="fitStart"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/heiligenberg" />
+                <TextView
+                    android:id="@+id/textViewWildgehege"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="20dp"
+                    android:text="5. Das Wildgehege Karlstern"
+                    android:textColor="#423D3D"
+                    android:textStyle="bold"
+                    android:textSize="25dp" />
+                <ImageView
+                    android:id="@+id/imageViewWildgehege"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="20dp"
+                    android:paddingRight="20dp"
+                    android:scaleType="fitStart"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/wildgehege_karlstern" />
+
+                <TextView
+                    android:id="@+id/textViewSchlossSchwetzingen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="20dp"
+                    android:text="6. Das Schloss Schwetzingen"
+                    android:textColor="#423D3D"
+                    android:textStyle="bold"
+                    android:textSize="25dp" />
+
+                <ImageView
+                    android:id="@+id/imageViewSchlossSchwetzingen"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="20dp"
+                    android:paddingRight="20dp"
+                    android:scaleType="fitStart"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/schloss_schwetzingen" />
+                <TextView
+                    android:id="@+id/textViewTaubenkopf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="20dp"
+                    android:text="7. Der Taubenkopf"
+                    android:textColor="#423D3D"
+                    android:textStyle="bold"
+                    android:textSize="25dp" />
+                <ImageView
+                    android:id="@+id/imageViewTaubenkopf"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingBottom="20dp"
+                    android:scaleType="fitStart"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/taubenkopf" />
+
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#557A95"
+                    android:gravity="center"
+                    android:paddingTop="40dp"
+                    android:paddingBottom="40dp"
+                    android:text="footer"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="@color/white" />
             </LinearLayout>
         </ScrollView>
 

@@ -32,7 +32,7 @@ import com.google.protobuf.StringValue;
 
 public class Konto extends AppCompatActivity {
     //Variables
-    
+
     FirebaseAuth fAuth;
 
     Button bLogout;
