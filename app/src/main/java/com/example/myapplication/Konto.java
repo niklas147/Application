@@ -38,6 +38,7 @@ public class Konto extends AppCompatActivity {
     Button bLogout;
     TextView etName, etLastname, etUsername, etGrade;
 
+
     //Drawer
     DrawerLayout drawerLayout;
     ImageView btMenu;
