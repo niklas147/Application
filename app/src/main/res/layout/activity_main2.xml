@@ -94,6 +94,7 @@
                     android:paddingLeft="20dp"
                     android:paddingTop="20dp"
                     android:paddingRight="20dp"
+                    android:onClick="gotoBarockSchloss"
                     android:scaleType="fitStart"
                     android:adjustViewBounds="true"
                     app:srcCompat="@drawable/barockschloss" />
@@ -115,6 +116,7 @@
                     android:paddingLeft="20dp"
                     android:paddingTop="20dp"
                     android:paddingRight="20dp"
+                    android:onClick="gotoWeisserStein"
                     android:scaleType="fitStart"
                     android:adjustViewBounds="true"
                     app:srcCompat="@drawable/weisser_stein" />
@@ -135,6 +137,7 @@
                     android:paddingLeft="20dp"
                     android:paddingTop="20dp"
                     android:paddingRight="20dp"
+                    android:onClick="gotoHeiligenberg"
                     android:scaleType="fitStart"
                     android:adjustViewBounds="true"
                     app:srcCompat="@drawable/heiligenberg" />
@@ -155,6 +158,7 @@
                     android:paddingLeft="20dp"
                     android:paddingTop="20dp"
                     android:paddingRight="20dp"
+                    android:onClick="gotoWildgehege"
                     android:scaleType="fitStart"
                     android:adjustViewBounds="true"
                     app:srcCompat="@drawable/wildgehege_karlstern" />
@@ -177,6 +181,7 @@
                     android:paddingLeft="20dp"
                     android:paddingTop="20dp"
                     android:paddingRight="20dp"
+                    android:onClick="gotoSchlossSchwetzingen"
                     android:scaleType="fitStart"
                     android:adjustViewBounds="true"
                     app:srcCompat="@drawable/schloss_schwetzingen" />
@@ -198,6 +203,7 @@
                     android:paddingTop="20dp"
                     android:paddingRight="20dp"
                     android:paddingBottom="20dp"
+                    android:onClick="gotoTaubenkopf"
                     android:scaleType="fitStart"
                     android:adjustViewBounds="true"
                     app:srcCompat="@drawable/taubenkopf" />

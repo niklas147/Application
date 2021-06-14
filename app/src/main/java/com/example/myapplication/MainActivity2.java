@@ -89,10 +89,57 @@ public class MainActivity2 extends AppCompatActivity {
 
     public void gotoStuhlberg(View view) {
         Intent intent = new Intent(getApplicationContext(), Summits.class);
-        String berg = "stuhlberg";
+        String berg = "Stuhlberg";
         intent.putExtra("berg", berg);
         startActivity(intent);
         
+    }
+    public void gotoBarockSchloss(View view) {
+        Intent intent = new Intent(getApplicationContext(), Summits.class);
+        String berg = "Barock Schloss";
+        intent.putExtra("berg", berg);
+        startActivity(intent);
+
+    }
+    public void gotoWeisserStein(View view) {
+        Intent intent = new Intent(getApplicationContext(), Summits.class);
+        String berg = "Weisser Stein";
+        intent.putExtra("berg", berg);
+        startActivity(intent);
+
+    }
+    public void gotoHeiligenberg(View view) {
+        Intent intent = new Intent(getApplicationContext(), Summits.class);
+        String berg = "Heiligenberg";
+        intent.putExtra("berg", berg);
+        startActivity(intent);
+
+    }
+    public void gotoWildgehege(View view) {
+        Intent intent = new Intent(getApplicationContext(), Summits.class);
+        String berg = "Wildgehege";
+        intent.putExtra("berg", berg);
+        startActivity(intent);
+
+    }
+    public void gotoSchlossSchwetzingen(View view) {
+        Intent intent = new Intent(getApplicationContext(), Summits.class);
+        String berg = "Schloss Schwetzingen";
+        intent.putExtra("berg", berg);
+        startActivity(intent);
+
+    }
+    public void gotoTaubenkopf(View view) {
+        Intent intent = new Intent(getApplicationContext(), Summits.class);
+        String berg = "Taubenkopf";
+        intent.putExtra("berg", berg);
+        startActivity(intent);
+
+    }
+    public void gotoStartseite(View view) {
+        Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
+        startActivity(intent);
+
     }
 
 
