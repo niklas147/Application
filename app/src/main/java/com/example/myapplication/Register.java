@@ -27,6 +27,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.SetOptions;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -83,7 +84,8 @@ public class Register extends AppCompatActivity {
                 String rePassword   = etRePassword.getText().toString().trim();
 
                 HashMap hashMap = new HashMap();
-
+                HashMap hashMapMnt = new HashMap();
+                String[] mntarray = new String[] {"stuhlberg","barockschloss","taubenkopf","wildgehege","schloss_schwetzingen","heiligenberg","weisser_stein"};
 
                 //Fehler abfangen
                 if (TextUtils.isEmpty(username)){
@@ -132,6 +134,7 @@ public class Register extends AppCompatActivity {
                 hashMap.put("Name", name);
                 hashMap.put("Nachname", lastname);
                 hashMap.put("Klasse", grade);
+                hashMapMnt.put(username.toLowerCase(), "false");
 
 
                 //Register the User
@@ -142,23 +145,36 @@ public class Register extends AppCompatActivity {
                         if(task.isSuccessful()){
 
                             // add User Data to Database
-                            db.collection("Benutzer").document(username.toLowerCase()).set(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
-                                @Override
-                                public void onSuccess(Void unused) {
-                                    Toast.makeText(Register.this, "Erfolgreich Registriert", Toast.LENGTH_SHORT).show();
-                                }
-                            })
-                            .addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    Toast.makeText(Register.this, "Erfolgreich Registriert, Datenspeicherung fehlgeschlagen", Toast.LENGTH_SHORT).show();
-                                }
-                            });
+                            db.collection("Benutzer").document(username.toLowerCase()).set(hashMap)
+                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void unused) {
+                                            Toast.makeText(Register.this, "Erfolgreich Registriert", Toast.LENGTH_SHORT).show();
+                                        }
+                                    })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Toast.makeText(Register.this, "Erfolgreich Registriert, Datenspeicherung fehlgeschlagen", Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
+
+
+                            for( int i = 0; i < mntarray.length; i++){
+                                db.collection(grade).document(mntarray[i]).set(hashMapMnt, SetOptions.merge())
+                                        .addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                Toast.makeText(Register.this, "Datenspeicherung fehlgeschlagen", Toast.LENGTH_SHORT).show();
+                                            }
+                                        });
+                            }
+
 
 
                             startActivity(new Intent(getApplicationContext(), MainActivity2.class));
                         }else{
-                            progressBar.setVisibility(View.VISIBLE);
+                            progressBar.setVisibility(View.INVISIBLE);
                             Toast.makeText(Register.this, "Fehler beim Erstellen des Benutzers" , Toast.LENGTH_SHORT).show();
 
                         }
