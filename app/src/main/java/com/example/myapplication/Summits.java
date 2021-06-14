@@ -17,6 +17,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -27,10 +28,7 @@ import java.io.IOException;
 
 public class Summits extends AppCompatActivity {
     //Initialize variable
-    DrawerLayout drawerLayout;
-    ImageView btMenu, imageView;
-    RecyclerView recyclerView;
-    Button btUploadButton, btChooseButton;
+    TextView etBerg;
 
 
 
@@ -40,9 +38,11 @@ public class Summits extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_summits);
+        Intent intent = getIntent();
+        String berg = intent.getExtras().getString("berg");
+        etBerg          =  findViewById(R.id.etBerg);
 
-
-
+        etBerg.setText(berg);
 
     }
 }

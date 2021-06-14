@@ -142,7 +142,7 @@ public class Register extends AppCompatActivity {
                         if(task.isSuccessful()){
 
                             // add User Data to Database
-                            db.collection(username.toLowerCase()).document("Persönliche Daten").set(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            db.collection("Benutzer").document(username.toLowerCase()).set(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void unused) {
                                     Toast.makeText(Register.this, "Erfolgreich Registriert", Toast.LENGTH_SHORT).show();

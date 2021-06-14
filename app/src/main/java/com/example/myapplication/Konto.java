@@ -82,7 +82,7 @@ public class Konto extends AppCompatActivity {
         if (user !=null){
 
 
-            db.collection(user.getEmail()).document("Persönliche Daten").get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            db.collection("Benutzer").document(user.getEmail()).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                 @Override
                 public void onSuccess(DocumentSnapshot documentSnapshot) {
 

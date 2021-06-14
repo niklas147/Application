@@ -87,7 +87,13 @@ public class MainActivity2 extends AppCompatActivity {
     }
 
 
-
+    public void gotoStuhlberg(View view) {
+        Intent intent = new Intent(getApplicationContext(), Summits.class);
+        String berg = "stuhlberg";
+        intent.putExtra("berg", berg);
+        startActivity(intent);
+        
+    }
 
 
 
