@@ -106,5 +106,9 @@ public class Konto extends AppCompatActivity {
         finish();
     }
 
+    public void test(View view){
 
+        startActivity(new Intent(getApplicationContext(), Summits.class));
+        finish();
+    }
 }

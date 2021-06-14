@@ -16,13 +16,14 @@
         <include
             layout="@layout/main_toolbar"/>
 
-        <TextView
+
+
+        <ImageView
+            android:id="@+id/imgView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Summits"
-            android:textSize="50sp"
-            android:textStyle="bold"
-            android:gravity="center"/>
+            android:layout_height="wrap_content"
+            />
+
 
     </LinearLayout>
 
@@ -31,9 +32,6 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:background="@color/white">
-
-        <include
-            layout="@layout/main_nav_drawer"/>
 
     </RelativeLayout>
 
