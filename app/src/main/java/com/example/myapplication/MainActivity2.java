@@ -136,11 +136,7 @@ public class MainActivity2 extends AppCompatActivity {
         startActivity(intent);
 
     }
-    public void gotoStartseite(View view) {
-        Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
-        startActivity(intent);
 
-    }
 
 
 

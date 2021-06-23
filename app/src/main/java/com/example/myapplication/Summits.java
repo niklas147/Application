@@ -45,4 +45,9 @@ public class Summits extends AppCompatActivity {
         etBerg.setText(berg);
 
     }
+    public void gotoStartseite(View view) {
+        Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
+        startActivity(intent);
+
+    }
 }
