@@ -89,49 +89,49 @@ public class MainActivity2 extends AppCompatActivity {
 
     public void gotoStuhlberg(View view) {
         Intent intent = new Intent(getApplicationContext(), Summits.class);
-        String berg = "Stuhlberg";
+        String berg = "stuhlberg_cut";
         intent.putExtra("berg", berg);
         startActivity(intent);
         
     }
     public void gotoBarockSchloss(View view) {
         Intent intent = new Intent(getApplicationContext(), Summits.class);
-        String berg = "Barock Schloss";
+        String berg = "barockschloss";
         intent.putExtra("berg", berg);
         startActivity(intent);
 
     }
     public void gotoWeisserStein(View view) {
         Intent intent = new Intent(getApplicationContext(), Summits.class);
-        String berg = "Weisser Stein";
+        String berg = "weisser_stein";
         intent.putExtra("berg", berg);
         startActivity(intent);
 
     }
     public void gotoHeiligenberg(View view) {
         Intent intent = new Intent(getApplicationContext(), Summits.class);
-        String berg = "Heiligenberg";
+        String berg = "heiligenberg";
         intent.putExtra("berg", berg);
         startActivity(intent);
 
     }
     public void gotoWildgehege(View view) {
         Intent intent = new Intent(getApplicationContext(), Summits.class);
-        String berg = "Wildgehege";
+        String berg = "wildgehege_karlstern";
         intent.putExtra("berg", berg);
         startActivity(intent);
 
     }
     public void gotoSchlossSchwetzingen(View view) {
         Intent intent = new Intent(getApplicationContext(), Summits.class);
-        String berg = "Schloss Schwetzingen";
+        String berg = "schloss_schwetzingen";
         intent.putExtra("berg", berg);
         startActivity(intent);
 
     }
     public void gotoTaubenkopf(View view) {
         Intent intent = new Intent(getApplicationContext(), Summits.class);
-        String berg = "Taubenkopf";
+        String berg = "taubenkopf";
         intent.putExtra("berg", berg);
         startActivity(intent);
 
