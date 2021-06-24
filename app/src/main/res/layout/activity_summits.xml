@@ -38,7 +38,8 @@
             android:layout_marginBottom="10dp"
             android:backgroundTint="#557a95"
             android:onClick="change"
-            android:text="habe ich besucht" />
+            android:text="habe ich besucht"
+            android:visibility="visible"/>
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"

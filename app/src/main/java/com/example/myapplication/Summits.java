@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -38,7 +39,7 @@ public class Summits extends AppCompatActivity {
     DrawerLayout drawerLayout;
     ImageView btMenu;
     RecyclerView recyclerView;
-
+    Button buttonBesucht;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     FirebaseAuth fAuth;
 
@@ -47,6 +48,7 @@ public class Summits extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_summits);
         Intent intent = getIntent();
+        buttonBesucht = (Button) findViewById(R.id.buttonBesucht);
         String berg = intent.getExtras().getString("berg");
         ListViewYes = (ListView)findViewById(R.id.ListViewYes);
         ListViewNot = (ListView)findViewById(R.id.ListViewNot);
@@ -90,7 +92,16 @@ public class Summits extends AppCompatActivity {
         int res = getResources().getIdentifier(berg, "drawable", getPackageName());
         imageViewTop.setImageResource(res);
 
-
+        db.collection("Benutzer").document(user.getEmail()).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                String Berg = documentSnapshot.getString(berg);
+                if(Berg.equals("besucht")){
+                    buttonBesucht.setEnabled(false);
+                    buttonBesucht.setText("bereits besucht");
+                }
+            }
+        });
         if (user !=null){
             db.collection("Benutzer").document(user.getEmail()).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                 @Override
@@ -178,7 +189,14 @@ public class Summits extends AppCompatActivity {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
                 String grade = documentSnapshot.getString("Klasse");
+                String besucht = documentSnapshot.getString("besucht");
+                int besuchtInt = Integer.parseInt(besucht);
+                besuchtInt = besuchtInt +1;
+                besucht = Integer.toString(besuchtInt);
+
+                hashMap.put("besucht",besucht);
                 db.collection(grade).document(user.getEmail()).update(hashMap);
+                db.collection("Benutzer").document(user.getEmail()).update(hashMap);
             }
         });
 

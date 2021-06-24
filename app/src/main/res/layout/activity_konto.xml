@@ -76,7 +76,20 @@
         android:layout_marginBottom="15dp"
         android:layout_height="wrap_content"
         android:textSize="17dp"/>
-
+    <TextView
+        android:id="@+id/tvSummits"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="0dp"
+        android:textColor="#B0BDCF"
+        android:layout_height="wrap_content"
+        android:textSize="17dp"
+        android:text="Summits besucht"/>
+    <EditText
+        android:id="@+id/etSummits"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="15dp"
+        android:layout_height="wrap_content"
+        android:textSize="17dp"/>
 
 
 
