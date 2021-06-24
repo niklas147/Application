@@ -16,6 +16,7 @@
         <include layout="@layout/main_toolbar" />
 
 
+
         <ImageView
             android:id="@+id/imageViewTop"
             android:layout_width="match_parent"
@@ -28,9 +29,38 @@
             android:scaleType="fitStart"
             app:srcCompat="@drawable/stuhlberg_cut" />
 
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+
+        <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+        <ListView
+            android:id="@+id/ListViewYes"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="0.5">
 
 
+        </ListView>
 
+        <ListView
+            android:id="@+id/ListViewNot"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="0.5">
+
+
+        </ListView>
+
+    </LinearLayout>
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -45,6 +75,7 @@
                 android:backgroundTint="#557a95"
                 android:onClick="gotoStartseite"
                 android:text="Zurück" />
+
 
         </RelativeLayout>
 

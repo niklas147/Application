@@ -85,6 +85,7 @@ public class Register extends AppCompatActivity {
 
                 HashMap hashMap = new HashMap();
                 HashMap hashMapMnt = new HashMap();
+                HashMap hashMapDummy = new HashMap();
                 String[] mntarray = new String[] {"stuhlberg","barockschloss","taubenkopf","wildgehege","schloss_schwetzingen","heiligenberg","weisser_stein"};
 
                 //Fehler abfangen
@@ -134,7 +135,18 @@ public class Register extends AppCompatActivity {
                 hashMap.put("Name", name);
                 hashMap.put("Nachname", lastname);
                 hashMap.put("Klasse", grade);
-                hashMapMnt.put(username.toLowerCase(), "false");
+                hashMap.put("stuhlberg_cut", "nicht besucht");
+                hashMap.put("barockschloss", "nicht besucht");
+                hashMap.put("taubenkopf", "nicht besucht");
+                hashMap.put("wildgehege_karlstern", "nicht besucht");
+                hashMap.put("schloss_schwetzingen", "nicht besucht");
+                hashMap.put("heiligenberg", "nicht besucht");
+                hashMap.put("weisser_stein", "nicht besucht");
+                hashMap.put("besucht", "0");
+
+                hashMapMnt.put(username.toLowerCase(), username.toLowerCase());
+
+
 
 
                 //Register the User
@@ -145,23 +157,14 @@ public class Register extends AppCompatActivity {
                         if(task.isSuccessful()){
 
                             // add User Data to Database
-                            db.collection("Benutzer").document(username.toLowerCase()).set(hashMap)
-                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                        @Override
-                                        public void onSuccess(Void unused) {
-                                            Toast.makeText(Register.this, "Erfolgreich Registriert", Toast.LENGTH_SHORT).show();
-                                        }
-                                    })
-                                    .addOnFailureListener(new OnFailureListener() {
-                                        @Override
-                                        public void onFailure(@NonNull Exception e) {
-                                            Toast.makeText(Register.this, "Erfolgreich Registriert, Datenspeicherung fehlgeschlagen", Toast.LENGTH_SHORT).show();
-                                        }
-                                    });
+                            db.collection(grade).document(username.toLowerCase()).set(hashMap);
+
+
+                            db.collection("Benutzer").document(username.toLowerCase()).set(hashMap);
 
 
                             for( int i = 0; i < mntarray.length; i++){
-                                db.collection(grade).document(mntarray[i]).set(hashMapMnt, SetOptions.merge())
+                                db.collection(grade+"BergeNot").document(mntarray[i]).set(hashMapMnt,SetOptions.merge())
                                         .addOnFailureListener(new OnFailureListener() {
                                             @Override
                                             public void onFailure(@NonNull Exception e) {
@@ -169,6 +172,8 @@ public class Register extends AppCompatActivity {
                                             }
                                         });
                             }
+
+
 
 
 
