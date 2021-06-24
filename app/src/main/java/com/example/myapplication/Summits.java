@@ -28,6 +28,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Summits extends AppCompatActivity {
     //Initialize variable
@@ -108,7 +109,7 @@ public class Summits extends AppCompatActivity {
                                         db.collection(grade).document(arrayListUser.get(i)).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                                             @Override
                                             public void onSuccess(DocumentSnapshot documentSnapshot) {
-                                                String name = documentSnapshot.getString("Schloss Schwetzingen");
+                                                String name = documentSnapshot.getString(berg);
                                                 String Benutzername = documentSnapshot.getString("Benutzername");
 
 
@@ -164,6 +165,22 @@ public class Summits extends AppCompatActivity {
     public void gotoStartseite(View view) {
         Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
         startActivity(intent);
+
+    }
+
+    public void change(View view) {
+        Intent intent = getIntent();
+        String berg = intent.getExtras().getString("berg");
+        FirebaseUser user = fAuth.getInstance().getCurrentUser();
+        HashMap hashMap = new HashMap();
+        hashMap.put(berg,"besucht");
+        db.collection("Benutzer").document(user.getEmail()).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                String grade = documentSnapshot.getString("Klasse");
+                db.collection(grade).document(user.getEmail()).update(hashMap);
+            }
+        });
 
     }
 }

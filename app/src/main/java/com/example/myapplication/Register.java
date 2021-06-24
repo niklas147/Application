@@ -85,8 +85,7 @@ public class Register extends AppCompatActivity {
 
                 HashMap hashMap = new HashMap();
                 HashMap hashMapMnt = new HashMap();
-                HashMap hashMapDummy = new HashMap();
-                String[] mntarray = new String[] {"stuhlberg","barockschloss","taubenkopf","wildgehege","schloss_schwetzingen","heiligenberg","weisser_stein"};
+
 
                 //Fehler abfangen
                 if (TextUtils.isEmpty(username)){
@@ -163,15 +162,7 @@ public class Register extends AppCompatActivity {
                             db.collection("Benutzer").document(username.toLowerCase()).set(hashMap);
 
 
-                            for( int i = 0; i < mntarray.length; i++){
-                                db.collection(grade+"BergeNot").document(mntarray[i]).set(hashMapMnt,SetOptions.merge())
-                                        .addOnFailureListener(new OnFailureListener() {
-                                            @Override
-                                            public void onFailure(@NonNull Exception e) {
-                                                Toast.makeText(Register.this, "Datenspeicherung fehlgeschlagen", Toast.LENGTH_SHORT).show();
-                                            }
-                                        });
-                            }
+
 
 
 

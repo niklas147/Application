@@ -29,6 +29,16 @@
             android:scaleType="fitStart"
             app:srcCompat="@drawable/stuhlberg_cut" />
 
+        <Button
+            android:id="@+id/buttonBesucht"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="#557a95"
+            android:onClick="change"
+            android:text="habe ich besucht" />
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
