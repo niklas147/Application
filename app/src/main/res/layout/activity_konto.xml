@@ -22,14 +22,19 @@
         android:layout_marginBottom="0dp"
         android:layout_height="wrap_content"
         android:text=" Vorname"
-        android:textColor="#B0BDCF"
+        android:textColor="@color/black"
         android:textSize="17dp" />
-    <EditText
+
+    <Button
         android:id="@+id/etVorname"
         android:layout_width="match_parent"
-        android:layout_marginBottom="15dp"
         android:layout_height="wrap_content"
-        android:textSize="17dp"/>
+        android:layout_marginBottom="15dp"
+
+        android:textSize="17dp"
+        android:textColor="@color/black"
+        android:backgroundTint="#F0F0F0"
+        android:gravity="left|center_vertical"/>
 
     <TextView
         android:id="@+id/etNachname1"
@@ -37,14 +42,17 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="0dp"
         android:text=" Nachname"
-        android:textColor="#B0BDCF"
+        android:textColor="@color/black"
         android:textSize="17dp" />
-    <EditText
+    <Button
         android:id="@+id/etNachname"
         android:layout_width="match_parent"
         android:layout_marginBottom="15dp"
         android:layout_height="wrap_content"
-        android:textSize="17dp"/>
+        android:textSize="17dp"
+        android:textColor="@color/black"
+        android:backgroundTint="#F0F0F0"
+        android:gravity="left|center_vertical"/>
 
 
     <TextView
@@ -52,44 +60,53 @@
         android:layout_width="match_parent"
         android:layout_marginBottom="0dp"
         android:layout_height="wrap_content"
-        android:textColor="#B0BDCF"
+        android:textColor="@color/black"
         android:textSize="17dp"
         android:text=" Email"/>
-    <EditText
+    <Button
         android:id="@+id/etBenutzername"
         android:layout_width="match_parent"
         android:layout_marginBottom="15dp"
         android:layout_height="wrap_content"
-        android:textSize="17dp"/>
+        android:textSize="17dp"
+        android:textColor="@color/black"
+        android:backgroundTint="#F0F0F0"
+        android:gravity="left|center_vertical"/>
 
     <TextView
         android:id="@+id/etGrade1"
         android:layout_width="match_parent"
         android:layout_marginBottom="0dp"
-        android:textColor="#B0BDCF"
+        android:textColor="@color/black"
         android:layout_height="wrap_content"
         android:textSize="17dp"
         android:text=" Klasse"/>
-    <EditText
+    <Button
         android:id="@+id/etGrade"
         android:layout_width="match_parent"
         android:layout_marginBottom="15dp"
         android:layout_height="wrap_content"
-        android:textSize="17dp"/>
+        android:textSize="17dp"
+        android:textColor="@color/black"
+        android:backgroundTint="#F0F0F0"
+        android:gravity="left|center_vertical"/>
     <TextView
         android:id="@+id/tvSummits"
         android:layout_width="match_parent"
         android:layout_marginBottom="0dp"
-        android:textColor="#B0BDCF"
+        android:textColor="@color/black"
         android:layout_height="wrap_content"
         android:textSize="17dp"
         android:text="Summits besucht"/>
-    <EditText
+    <Button
         android:id="@+id/etSummits"
         android:layout_width="match_parent"
         android:layout_marginBottom="15dp"
         android:layout_height="wrap_content"
-        android:textSize="17dp"/>
+        android:textSize="17dp"
+        android:textColor="@color/black"
+        android:backgroundTint="#F0F0F0"
+        android:gravity="left|center_vertical"/>
 
 
 
@@ -106,24 +123,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="8dp"
-        android:backgroundTint="#557a95"
+        android:backgroundTint="@color/black"
         android:onClick="logout"
         android:text="Abmelden" />
 
-    <Button
-        android:id="@+id/btTest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/bLogout"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="168dp"
-        android:layout_marginTop="234dp"
-        android:layout_marginEnd="149dp"
-        android:layout_marginBottom="8dp"
-        android:onClick="test"
-        android:text="Button" />
+
 
 
 </RelativeLayout>

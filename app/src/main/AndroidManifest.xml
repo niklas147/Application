@@ -13,12 +13,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".Konto"
-            android:launchMode="singleTask"/>
-        <activity android:name=".Summits"
-            android:launchMode="singleTask"/>
-        <activity android:name=".MainActivity2"
-            android:launchMode="singleTask"/>
+        <activity android:name=".Summits"></activity>
+        <activity
+            android:name=".Konto"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".Top"
+            android:launchMode="singleTask" />
+
+        <activity
+            android:name=".MainActivity2"
+            android:launchMode="singleTask" />
         <activity
             android:name=".Register"
             android:label="@string/title_activity_register"

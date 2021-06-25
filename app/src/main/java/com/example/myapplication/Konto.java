@@ -36,7 +36,7 @@ public class Konto extends AppCompatActivity {
     FirebaseAuth fAuth;
 
     Button bLogout;
-    TextView etName, etLastname, etUsername, etGrade;
+    TextView etName, etLastname, etUsername, etGrade, etSummmits;
 
 
     //Drawer
@@ -54,7 +54,7 @@ public class Konto extends AppCompatActivity {
         etUsername      =  findViewById(R.id.etBenutzername);
         etGrade         =  findViewById(R.id.etGrade);
         bLogout         =  findViewById(R.id.bLogout);
-
+        etSummmits      =  findViewById(R.id.etSummits);
         //Drawer
         drawerLayout = findViewById(R.id.drawer_layout);
         btMenu = findViewById(R.id.bt_menu);
@@ -90,7 +90,9 @@ public class Konto extends AppCompatActivity {
                     String lastname = documentSnapshot.getString("Nachname");
                     String grade = documentSnapshot.getString("Klasse");
                     String username = documentSnapshot.getString("Benutzername");
+                    String summits = documentSnapshot.getString("besucht");
 
+                    etSummmits.setText(summits);
                     etLastname.setText(lastname);
                     etName.setText(name);
                     etGrade.setText(grade);

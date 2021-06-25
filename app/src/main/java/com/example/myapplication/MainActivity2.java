@@ -61,9 +61,10 @@ public class MainActivity2 extends AppCompatActivity {
         arrayList.clear();
 
         //Add menu item in array list
-        arrayList.add("Home");
+
         arrayList.add("7 Summits");
         arrayList.add("Konto");
+        arrayList.add("Top");
 
 
         //Initialize adapter

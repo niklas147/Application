@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="0dp"
-    app:cardBackgroundColor="#557A95">
+    app:cardBackgroundColor="@color/black">
 
 
     <RelativeLayout

@@ -47,19 +47,30 @@ public class Summits extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_summits);
+
+        //conection to firebase
+        fAuth           = FirebaseAuth.getInstance();
+        FirebaseUser user = fAuth.getInstance().getCurrentUser();
+
+        //get Summit which was clicked
         Intent intent = getIntent();
-        buttonBesucht = (Button) findViewById(R.id.buttonBesucht);
         String berg = intent.getExtras().getString("berg");
+
+        //adds Objects
+        buttonBesucht = (Button) findViewById(R.id.buttonBesucht);
         ListViewYes = (ListView)findViewById(R.id.ListViewYes);
         ListViewNot = (ListView)findViewById(R.id.ListViewNot);
+        TextView = findViewById(R.id.textViewBesucht);
+        imageViewTop = findViewById(R.id.imageViewTop);
+
+        //Lists for "besucht" "nicht besucht"
         ArrayList<String> arrayListYes =  new ArrayList<>();
         ArrayList<String> arrayListNot =  new ArrayList<>();
         ArrayList<String> arrayListUser =  new ArrayList<>();
 
-        TextView = (TextView)findViewById(R.id.textView2);
 
+        //Array Adapter for ListView
         ArrayAdapter arrayAdapterNot = new ArrayAdapter(this, android.R.layout.simple_list_item_1,arrayListNot);
-
         ArrayAdapter arrayAdapterYes = new ArrayAdapter(this, android.R.layout.simple_list_item_1,arrayListYes);
 
 
@@ -68,10 +79,6 @@ public class Summits extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawer_layout);
         btMenu = findViewById(R.id.bt_menu);
         recyclerView = findViewById(R.id.recycler_view);
-        //Drawer end
-
-        fAuth           = FirebaseAuth.getInstance();
-        FirebaseUser user = fAuth.getInstance().getCurrentUser();
 
         //Set Layout manager
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -87,11 +94,14 @@ public class Summits extends AppCompatActivity {
 
             }
         });
-        imageViewTop = findViewById(R.id.imageViewTop);
+        //Drawer End
 
+        //sets imageView to current Summit
         int res = getResources().getIdentifier(berg, "drawable", getPackageName());
         imageViewTop.setImageResource(res);
 
+
+        //checks if current user visited summit and disables button if so
         db.collection("Benutzer").document(user.getEmail()).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
@@ -102,28 +112,38 @@ public class Summits extends AppCompatActivity {
                 }
             }
         });
+
+
+
+        //save User to arrayListYes and arrayListNot if visited current summit or not
         if (user !=null){
+
+            //gets grade from current user
             db.collection("Benutzer").document(user.getEmail()).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                 @Override
                 public void onSuccess(DocumentSnapshot documentSnapshot) {
 
                     String grade = documentSnapshot.getString("Klasse");
+
+                    //gets all users within same grade
                     db.collection(grade).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                         @Override
                         public void onComplete(Task<QuerySnapshot> task) {
                             if(task.isSuccessful()) {
                                 for (QueryDocumentSnapshot document : task.getResult())     {
 
-
                                     arrayListUser.add(document.getId());
+
+                                        //checks if "besucht" or "nicht besucht"
                                         for(int i = 0;i < arrayListUser.size(); i ++){
                                         db.collection(grade).document(arrayListUser.get(i)).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                                             @Override
                                             public void onSuccess(DocumentSnapshot documentSnapshot) {
+
                                                 String name = documentSnapshot.getString(berg);
                                                 String Benutzername = documentSnapshot.getString("Benutzername");
 
-
+                                                //checks for doubles in array
                                                 if(name.equals("besucht")){
                                                     if(arrayListYes.isEmpty()){
                                                         arrayListYes.add(Benutzername);
@@ -138,6 +158,7 @@ public class Summits extends AppCompatActivity {
                                                     if(count==0){
                                                         arrayListYes.add(Benutzername);
                                                     }}
+
                                                 if(name.equals("nicht besucht")){
                                                     if(arrayListNot.isEmpty()){
                                                         arrayListNot.add(Benutzername);
@@ -152,33 +173,29 @@ public class Summits extends AppCompatActivity {
                                                     if(count==0){
                                                         arrayListNot.add(Benutzername);
                                                     }}
-
-
-
+                                                //sets Listview with users
                                                 ListViewYes.setAdapter(arrayAdapterYes);
                                                 ListViewNot.setAdapter(arrayAdapterNot);
                                             }
                                         });
-
-
-
                                         }
                                 }
-                            }}});
-
-
+                            }
+                        }
+                    });
                 }
             });
+        }
+    }
 
-    }
-        Toast.makeText(Summits.this, berg, Toast.LENGTH_SHORT).show();
-    }
+
     public void gotoStartseite(View view) {
         Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
         startActivity(intent);
-
     }
 
+
+    //changed Current logged in User for Current Summit to "besucht" and adds +1 to overall visited
     public void change(View view) {
         Intent intent = getIntent();
         String berg = intent.getExtras().getString("berg");
@@ -189,12 +206,12 @@ public class Summits extends AppCompatActivity {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
                 String grade = documentSnapshot.getString("Klasse");
-                String besucht = documentSnapshot.getString("besucht");
-                int besuchtInt = Integer.parseInt(besucht);
+                String besuchtString = documentSnapshot.getString("besucht");
+                int besuchtInt = Integer.parseInt(besuchtString);
                 besuchtInt = besuchtInt +1;
-                besucht = Integer.toString(besuchtInt);
+                besuchtString = Integer.toString(besuchtInt);
 
-                hashMap.put("besucht",besucht);
+                hashMap.put("besucht",besuchtString);
                 db.collection(grade).document(user.getEmail()).update(hashMap);
                 db.collection("Benutzer").document(user.getEmail()).update(hashMap);
             }
