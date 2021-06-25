@@ -16,10 +16,25 @@
         <include
             layout="@layout/main_toolbar"/>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ListView
+                android:id="@+id/ListViewTop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+
+                >
 
 
+            </ListView>
 
+        </LinearLayout>
     </LinearLayout>
+
 
     <RelativeLayout
         android:layout_width="300dp"
