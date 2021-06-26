@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.Toast;
+
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -71,7 +71,6 @@ public class Top extends AppCompatActivity {
         //Lists for "User" "Count" "Ergebnis"
         ArrayList<String> arrayListUser =  new ArrayList<>();
         ArrayList<String> arrayListUserFinal =  new ArrayList<>();
-        ArrayList<String> arrayListErgebnis =  new ArrayList<>();
         ArrayList<Integer> arrayListCount =  new ArrayList<>();
 
 
@@ -105,25 +104,25 @@ public class Top extends AppCompatActivity {
                                                 String AnzahlString = documentSnapshot.getString("besucht");
                                                 int AnzahlInt = Integer.parseInt(AnzahlString);
                                                 String Benutzername = documentSnapshot.getString("Benutzername");
-
+                                                String AnzahlBenutzer = Benutzername +" "+ AnzahlString;
                                                 //checks for doubles in array
 
                                                     if(arrayListUserFinal.isEmpty()){
-                                                        arrayListUserFinal.add(0,Benutzername);
+                                                        arrayListUserFinal.add(0,Benutzername + " Summits: " +AnzahlInt);
                                                         arrayListCount.add(0,AnzahlInt);
                                                     }
                                                     int count = 0;
                                                     for(int i = 0; i < arrayListUserFinal.size();i++ ){
 
-                                                        if(arrayListUserFinal.get(i).equals(Benutzername)){
+                                                        if(arrayListUserFinal.get(i).equals(Benutzername + " Summits: " +AnzahlInt)){
                                                             count = count +1;
                                                         }
                                                     }
                                                     if(count==0){
-                                                        arrayListUserFinal.add(Benutzername);
+                                                        arrayListUserFinal.add(Benutzername + " Summits: " +AnzahlInt);
 
                                                     for(int i = 0; i<arrayListUserFinal.size(); i++){
-                                                        if(arrayListUserFinal.get(i).equals(Benutzername)){
+                                                        if(arrayListUserFinal.get(i).equals(Benutzername + " Summits: " +AnzahlInt)){
                                                             arrayListCount.add(i,AnzahlInt);
                                                         }
                                                     }}
