@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import androidx.fragment.app.FragmentActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -42,10 +43,40 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-
+        Intent intent = getIntent();
+        String berg = intent.getExtras().getString("berg");
+        float zoom = getIntent().getFloatExtra("zoom", 15);
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        LatLng Marker = new LatLng(0,0);
+        if(berg.equals("stuhlberg_cut")){
+             Marker = new LatLng(49.542395, 9.020482);
+            mMap.addMarker(new MarkerOptions().position(Marker).title("Falkenberg"));
+
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Marker,10.0f));
+             }
+        if(berg.equals("barockschloss")){
+            Marker = new LatLng(49.482959, 8.459597);
+            mMap.addMarker(new MarkerOptions().position(Marker).title("Barockschloss"));
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Marker,10.0f));}
+        if(berg.equals("weisser_stein")){
+            Marker = new LatLng(49.4536241,8.7145782);
+            mMap.addMarker(new MarkerOptions().position(Marker).title("Weisser Stein"));
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Marker,10.0f));}
+        if(berg.equals("heiligenberg")){
+            Marker = new LatLng(47.8412777,9.2357223);
+            mMap.addMarker(new MarkerOptions().position(Marker).title("Heiligenberg"));
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Marker,10.0f));}
+        if(berg.equals("wildgehege_karlstern")){
+            Marker = new LatLng(49.5329372,8.5152871);
+            mMap.addMarker(new MarkerOptions().position(Marker).title("Wildgehege"));
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Marker,10.0f));}
+        if(berg.equals("schloss_schwetzingen")){
+            Marker = new LatLng(49.3841299,8.5683959);
+            mMap.addMarker(new MarkerOptions().position(Marker).title("Schloss Schwetzingen"));
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Marker,10.0f));}
+        if(berg.equals("taubenkopf")){
+            Marker = new LatLng(49.6459921,7.7967165);
+            mMap.addMarker(new MarkerOptions().position(Marker).title("Barockschloss"));
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Marker,10.0f));}
     }
 }

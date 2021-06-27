@@ -189,9 +189,14 @@ public class Summits extends AppCompatActivity {
     }
 
 
-    public void gotoStartseite(View view) {
-        Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
-        startActivity(intent);
+    public void gotoMap(View view) {
+        Intent intent = getIntent();
+        String berg = intent.getExtras().getString("berg");
+        Intent intent1 = new Intent(getApplicationContext(), MapsActivity.class);
+
+
+        intent1.putExtra("berg", berg);
+        startActivity(intent1);
     }
 
 

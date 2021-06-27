@@ -73,7 +73,7 @@
     </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
         <ListView
@@ -97,7 +97,14 @@
         </ListView>
 
     </LinearLayout>
-
+        <TextView
+            android:id="@+id/tvLoginLink"
+            android:layout_width="wrap_content"
+            android:text="du kennst diesen Ort nicht ? klicke Hier"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="30dp"
+            android:onClick="gotoMap"
+            android:layout_height="wrap_content"/>
 
     </LinearLayout>
     <RelativeLayout
