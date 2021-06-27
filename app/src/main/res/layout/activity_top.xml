@@ -32,16 +32,16 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="15dp"
+            android:paddingLeft="13dp"
             android:paddingTop="15dp"
-            android:paddingRight="15dp"
+            android:paddingRight="13dp"
             android:paddingBottom="15dp"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:text="Das sind unsere Top-Kandidaten:"
             android:textSize="23dp"
             android:textColor="@color/white"
-            android:background="#B0557A95"
+            android:background="#557a95"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
