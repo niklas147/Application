@@ -107,6 +107,11 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
     }
 
+
+
+
+
+
     @Override
     public int getItemCount() {
         //Return array list size
