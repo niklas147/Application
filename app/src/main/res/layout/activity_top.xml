@@ -16,10 +16,37 @@
         <include
             layout="@layout/main_toolbar"/>
 
+        <ImageView
+            android:id="@+id/pokal"
+            android:layout_width="wrap_content"
+            android:layout_height= "wrap_content"
+            android:maxHeight="150dp"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:scaleType="fitStart"
+            app:srcCompat="@drawable/pokal" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingTop="15dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:text="Das sind unsere Top-Kandidaten:"
+            android:textSize="23dp"
+            android:textColor="@color/white"
+            android:background="#B0557A95"
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal">
+
 
             <ListView
                 android:id="@+id/ListViewTop"
